@@ -1,0 +1,181 @@
+/* ---------- GENERAL ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f6f3;
+    color: #2f2f2f;
+    line-height: 1.7;
+    margin: 0;
+    padding-top: 70px;
+}
+
+/* ---------- NAVBAR ---------- */
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background-color: #3a7f7a !important;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    min-height: 70vh;
+    background: linear-gradient(
+        rgba(247, 246, 243, 0.75),
+        rgba(247, 246, 243, 0.75)
+    ),
+    url("../img/educacion.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-weight: 600;
+    font-size: 2.6rem;
+}
+
+.hero .lead {
+    font-weight: 300;
+}
+
+.frase {
+    font-style: italic;
+    margin-top: 1rem;
+    color: #3a7f7a;
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+    padding: 4rem 0;
+}
+
+.section-alt {
+    background-color: #eef3f2;
+}
+
+.section h2 {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #3a7f7a;
+}
+
+.section p {
+    max-width: 800px;
+}
+
+.section p,
+.section ul {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+.section:last-of-type {
+    padding-bottom: 5rem;
+}
+.card {
+    border: none;
+    border-left: 6px solid #3a7f7a;
+    border-radius: 12px;
+}
+
+.card-title {
+    color: #3a7f7a;
+    font-weight: 600;
+}
+
+.intro-text {
+    max-width: 700px;
+}
+
+/* ---------- GALERÍA DE IMÁGENES ---------- */
+.img-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.img-hover:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+/* ---------- GALERÍA BIRRETE ---------- */
+.img-galeria {
+    height: 260px;          /* Ajusta si quieres */
+    object-fit: cover;      /* Recorta sin deformar */
+    object-position: center;
+}
+.img-galeria {
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 12px;
+}
+/* ---------- GALERÍA BIRRETE (SIN RECORTE) ---------- */
+.img-wrapper {
+    height: 300px;                 /* mismo alto para todas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f6f3;     /* mismo fondo que la web */
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;           /* CLAVE */
+}
+.img-wrapper {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+
+/* ---------- LIST ---------- */
+ul {
+    max-width: 800px;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+    background-color: #3a7f7a;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    color: #e9f3f2;
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
