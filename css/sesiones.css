@@ -1,0 +1,440 @@
+/* =========================
+   CAMINO SVG
+========================= */
+
+.camino-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    margin: 120px auto 0;
+}
+
+.camino-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Camino */
+#camino {
+    fill: none;
+    stroke: #3b7f78;
+    stroke-width: 4;
+    stroke-dasharray: 8 8;
+}
+
+/* =========================
+   NODOS HTML
+========================= */
+
+.nodo-html {
+    position: absolute;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: #3b7f78;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.nodo-html:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.nodo-html.expand {
+    transform: translate(-50%, -50%) scale(30);
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1);
+    box-shadow: none;
+    z-index: 2000;
+}
+body.is-transitioning .navbar {
+    z-index: 0;
+}
+
+
+/* POSICIONES */
+.n1  { left: calc(140 / 1300 * 100%); top: calc(140 / 900 * 100%); }
+.n2  { left: calc(360 / 1300 * 100%); top: calc(140 / 900 * 100%); }
+.n3  { left: calc(580 / 1300 * 100%); top: calc(140 / 900 * 100%); }
+.n4  { left: calc(800 / 1300 * 100%); top: calc(140 / 900 * 100%); }
+.n5  { left: calc(1040 / 1300 * 100%); top: calc(200 / 900 * 100%); }
+.n6  { left: calc(900 / 1300 * 100%); top: calc(300 / 900 * 100%); }
+.n7  { left: calc(660 / 1300 * 100%); top: calc(360 / 900 * 100%); }
+.n8  { left: calc(420 / 1300 * 100%); top: calc(360 / 900 * 100%); }
+.n9  { left: calc(420 / 1300 * 100%); top: calc(520 / 900 * 100%); }
+.n10 { left: calc(580 / 1300 * 100%); top: calc(600 / 900 * 100%); }
+.n11 { left: calc(800 / 1300 * 100%); top: calc(600 / 900 * 100%); }
+.n12 { left: calc(1040 / 1300 * 100%); top: calc(600 / 900 * 100%); }
+.n13 { left: calc(1160 / 1300 * 100%); top: calc(740 / 900 * 100%); }
+
+/* =========================
+   SESIONES INDIVIDUALES
+========================= */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f7f4;
+    color: #2e2e2e;
+    line-height: 1.7;
+}
+
+/* Contenedor general */
+.sesion-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 20px 100px;
+}
+
+/* Fecha */
+.fecha {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+/* Bloques */
+.bloque {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin-bottom: 50px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Grupo completo */
+.bloque-completo {
+    border-left: 6px solid #3b7f78;
+}
+
+.bloque-completo h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #2f6761;
+}
+
+/* Grupo reducido */
+.bloque-reducido {
+    border-left: 6px solid #c8a96a;
+    background: #faf9f6;
+}
+
+.bloque-reducido h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #8a6f3d;
+}
+
+/* Contenido */
+.contenido p {
+    margin-bottom: 16px;
+}
+
+/* =========================
+   PAGINACIÓN
+========================= */
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.paginacion a,
+.paginacion span {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: #3b7f78;
+    border: 1.5px solid #3b7f78;
+    transition: all 0.25s ease;
+}
+
+.paginacion a:hover {
+    background: #3b7f78;
+    color: white;
+}
+
+.paginacion .activa {
+    background: #3b7f78;
+    color: white;
+    pointer-events: none;
+}
+
+.paginacion span {
+    border: none;
+    color: #aaa;
+}
+/* =========================
+   ESTADO DE TRANSICIÓN
+========================= */
+
+/* EXPANSIÓN AL CLICAR */
+.nodo-html.expand {
+    transform: translate(-50%, -50%) scale(30);
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1);
+    box-shadow: none;
+}
+
+/* OCULTAR LOS DEMÁS */
+body.is-transitioning .nodo-html:not(.expand) {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+/* =========================
+   ENTRADA CÍRCULO (SESION)
+========================= */
+
+.circle-enter {
+    position: fixed;
+    width: 300vmax;
+    height: 300vmax;
+    background: #3b7f78;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 9999;
+    animation: circleIn 0.9s cubic-bezier(.4,0,.2,1) forwards;
+}
+/* El texto NO se anima */
+.nodo-html span {
+    transition: opacity 0.15s ease;
+}
+
+/* En cuanto empieza la expansión, el número desaparece */
+.nodo-html.expand span {
+    opacity: 0;
+}
+/* =========================
+   BOTÓN VOLVER
+========================= */
+
+.volver {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    color: #3b7f78;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.volver:hover {
+    color: #2f6761;
+    transform: translateX(-4px);
+}
+
+/* CÍRCULO DE TRANSICIÓN */
+#circle-transition {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #3b7f78;
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.8s cubic-bezier(.4,0,.2,1);
+    z-index: 99999; /* MÁS ALTO QUE LA NAVBAR */
+}
+/* SUBTÍTULO */
+.subtitulo {
+    font-size: 0.95rem;
+    color: #6b8f8a;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+/* BLOQUES INTERNOS */
+.mini-bloque {
+    margin-bottom: 40px;
+}
+
+.mini-bloque h3 {
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    color: #3b7f78;
+}
+
+/* BLOQUE DESTACADO */
+.mini-bloque.destacado {
+    padding: 24px;
+    background: rgba(59,127,120,0.08);
+    border-left: 4px solid #3b7f78;
+    border-radius: 6px;
+}
+
+/* CITA */
+blockquote {
+    margin: 32px 0;
+    padding-left: 20px;
+    border-left: 3px solid #3b7f78;
+    font-style: italic;
+    color: #2f6761;
+}
+
+/* FRASE DESTACADA */
+.cita {
+    margin-top: 20px;
+    font-style: italic;
+    font-weight: 500;
+    color: #2f6761;
+}
+/* =========================
+   GRUPO REDUCIDO (ACENTO AMARILLO)
+========================= */
+
+.bloque-reducido {
+    border-left: 6px solid #c8a96a;
+    background: #faf9f6;
+    color: #2e2e2e; /* texto normal neutro */
+}
+
+/* TÍTULOS */
+.bloque-reducido h2,
+.bloque-reducido h3 {
+    color: #8a6f3d; /* amarillo principal */
+}
+
+/* CITA GRANDE */
+.bloque-reducido .cita {
+    color: #8a6f3d;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* BLOCKQUOTE */
+.bloque-reducido blockquote {
+    border-left: 3px solid #c8a96a;
+    color: #8a6f3d;
+}
+
+/* TEXTO NORMAL */
+.bloque-reducido p {
+    color: #2e2e2e;
+}
+/* =========================
+   MINI-BLOQUE DESTACADO
+   (DENTRO DE BLOQUE REDUCIDO)
+========================= */
+
+.bloque-reducido .mini-bloque.destacado {
+    background: rgba(200,169,106,0.12); /* amarillo suave */
+    border-left: 4px solid #c8a96a;
+}
+
+.bloque-reducido .mini-bloque.destacado h3 {
+    color: #8a6f3d; /* amarillo principal */
+}
+
+.bloque-reducido .mini-bloque.destacado p {
+    color: #2e2e2e; /* texto normal */
+}
+.btn-evidencia {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 22px;
+    border: 2px solid #c8a96a;
+    color: #c8a96a;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-evidencia:hover {
+    background-color: #c8a96a;
+    color: #fff;
+}
+.btn-evidencia.verde {
+    background-color: #198754;      /* verde tipo Bootstrap */
+    border-color: #198754;
+    color: #fff;
+}
+
+.btn-evidencia.verde:hover {
+    background-color: #157347;
+    border-color: #146c43;
+    color: #fff;
+}
+/* ===== GALERÍA DE IMÁGENES ===== */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.img-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-hover:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+/* ===== VÍDEOS DE SESIONES ===== */
+.video-sesion {
+    width: 100%;
+    max-width: 720px;
+    border-radius: 12px;
+    margin: 1.5rem auto;
+    display: block;
+}
+/* DEFINICIÓN DESTACADA VERDE TIPO TÍTULOS */
+.definicion-destacada {
+    background-color: #e6f2ec; /* verde muy suave de fondo */
+    border-left: 6px solid #2f6f5e; /* verde más oscuro, como el de los títulos */
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2f6f5e; /* texto verde, tipo títulos */
+}
+
+@keyframes circleIn {
+    to {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+    .nodo-html {
+        width: 84px;
+        height: 84px;
+        font-size: 22px;
+    }
+}

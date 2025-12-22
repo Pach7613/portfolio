@@ -172,6 +172,44 @@ li {
 .footer p {
     margin: 0;
 }
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+}
+
+.navbar-brand img {
+    max-height: 55px;
+    width: auto;
+    object-fit: contain;
+}
+/* Logo derecho (UMA) */
+.navbar-logo-right img {
+    max-height: 40px;     /* tamaño controlado */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Alineación vertical perfecta */
+.navbar-logo-right {
+    display: flex;
+    align-items: center;
+}
+
+.integrante-img {
+    height: 260px;
+    object-fit: cover;
+}
+.integrante-img {
+    border-radius: 6px 6px 0 0;
+}
+
+@media (max-width: 576px) {
+    .navbar-logo-right img {
+        max-height: 32px;
+    }
+}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
