@@ -204,6 +204,13 @@ li {
 .integrante-img {
     border-radius: 6px 6px 0 0;
 }
+.hero-sesiones {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
+    ),
+    url("../img/educacion.jpg") center/cover no-repeat;
+}
 
 @media (max-width: 576px) {
     .navbar-logo-right img {
