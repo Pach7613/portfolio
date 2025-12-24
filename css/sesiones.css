@@ -79,6 +79,17 @@ body.is-transitioning .navbar {
 .n11 { left: calc(800 / 1300 * 100%); top: calc(600 / 900 * 100%); }
 .n12 { left: calc(1040 / 1300 * 100%); top: calc(600 / 900 * 100%); }
 .n13 { left: calc(1160 / 1300 * 100%); top: calc(740 / 900 * 100%); }
+.n14 { 
+    left: calc(900 / 1300 * 100%); 
+    top:  calc(780 / 900 * 100%); 
+}
+
+.n15 { 
+    left: calc(600 / 1300 * 100%); 
+    top:  calc(780 / 900 * 100%); 
+}
+
+
 
 /* =========================
    SESIONES INDIVIDUALES
