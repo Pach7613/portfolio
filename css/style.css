@@ -305,6 +305,16 @@ li {
     transform: scale(1.05) rotate(0deg);
 }
 
+.video-sesion-container {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.video-sesion {
+    width: 50%;
+    max-width: 720px;
+    border-radius: 12px;
+}
 
 
 /* RESPONSIVE */

@@ -412,6 +412,7 @@ blockquote {
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 /* ===== VÍDEOS DE SESIONES ===== */
+/* Videos horizontales siguen igual */
 .video-sesion {
     width: 100%;
     max-width: 720px;
@@ -419,6 +420,24 @@ blockquote {
     margin: 1.5rem auto;
     display: block;
 }
+
+/* Contenedor de videos verticales */
+.video-row {
+    display: flex;
+    justify-content: center; /* centra los videos */
+    gap: 1rem; /* separación entre ellos */
+    margin: 1.5rem 0;
+    flex-wrap: wrap; /* para que se apilen en móvil */
+}
+
+/* Videos verticales */
+.video-sesion-vertical {
+    width: 48%; /* dos videos lado a lado */
+    max-width: 360px; /* opcional */
+    border-radius: 12px;
+}
+
+
 /* DEFINICIÓN DESTACADA VERDE TIPO TÍTULOS */
 .definicion-destacada {
     background-color: #e6f2ec; /* verde muy suave de fondo */
