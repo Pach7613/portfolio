@@ -431,6 +431,36 @@ blockquote {
     line-height: 1.6;
     color: #2f6f5e; /* texto verde, tipo títulos */
 }
+/* =========================
+   FOTOS DECORATIVAS CAMINO
+========================= */
+
+.foto-camino {
+    position: absolute;
+    width: 200px; /* MÁS GRANDES */
+    border-radius: 18px;
+    box-shadow: 0 24px 55px rgba(0,0,0,0.22);
+    transition: transform 0.4s ease;
+    z-index: 1;
+    opacity: 0.96;
+}
+
+.foto-camino:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+/* Variaciones suaves */
+.foto-1 { transform: rotate(-4deg); }
+.foto-2 { transform: rotate(3deg); }
+.foto-3 { transform: rotate(-2deg); }
+.foto-4 { transform: rotate(4deg); }
+
+/* Responsive: ocultamos en móvil */
+@media (max-width: 768px) {
+    .foto-camino {
+        display: none;
+    }
+}
 
 @keyframes circleIn {
     to {

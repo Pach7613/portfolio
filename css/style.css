@@ -211,6 +211,115 @@ li {
     ),
     url("../img/educacion.jpg") center/cover no-repeat;
 }
+.foto-portfolio {
+    max-width: 260px;
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+    transition: transform 0.35s ease;
+}
+
+.foto-portfolio:hover {
+    transform: scale(1.05) rotate(-1deg);
+}
+/* =========================
+   FOTOS CONCLUSIÓN
+========================= */
+
+.fotos-conclusion {
+    min-height: 380px;
+}
+
+.foto-conclusion {
+    width: 85%;
+    border-radius: 18px;
+    box-shadow: 0 22px 50px rgba(0,0,0,0.22);
+    position: absolute;
+    transition: transform 0.4s ease;
+}
+
+/* Primera foto */
+.foto-c1 {
+    top: 0;
+    right: 0;
+    transform: rotate(-4deg);
+}
+
+/* Segunda foto */
+.foto-c2 {
+    top: 180px;
+    right: 40px;
+    transform: rotate(5deg);
+}
+
+/* Hover suave */
+.foto-conclusion:hover {
+    transform: scale(1.03) rotate(0deg);
+}
+/* =========================
+   FOTO A LA DERECHA EN SECTIONS
+========================= */
+
+.foto-section {
+    width: 90%;
+    max-width: 420px;
+    border-radius: 20px;
+    box-shadow: 0 22px 45px rgba(0,0,0,0.25);
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* =========================
+   FOTOS INFANCIA
+========================= */
+
+.foto-infancia {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transform: rotate(-2deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;   
+}
+
+.foto-section:hover {
+    transform: scale(1.04) rotate(0deg);
+    box-shadow: 0 26px 55px rgba(0,0,0,0.3);
+}
+
+/* Rotaciones individuales */
+.rot-left {
+    transform: rotate(-4deg);
+}
+
+.rot-center {
+    transform: rotate(3deg);
+}
+
+.rot-right {
+    transform: rotate(-1deg);
+}
+
+/* Hover común */
+.foto-infancia:hover {
+    transform: scale(1.05) rotate(0deg);
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+    .fotos-conclusion {
+        min-height: auto;
+    }
+
+    .foto-conclusion {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+        transform: none;
+    }
+}
 
 @media (max-width: 576px) {
     .navbar-logo-right img {
